@@ -1,9 +1,7 @@
+# render.yaml
+
 services:
-  - name: my-fastapi-app
-    buildCommand: pip install fastapi uvicorn
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-  
-
-
-
+  - name: testapi
+    buildCommand: cd $RENDER_WORKDIR && pip install fastapi uvicorn
+    startCommand: cd $RENDER_WORKDIR && uvicorn main:app --host 0.0.0.0 --port $PORT
 
